@@ -1,0 +1,20 @@
+dataframe_order: 5
+materialized: true
+label: Input Catalog
+source: input
+fields:
+    input_id:
+        field_type: dimension
+        name: "Input ID"
+        source: input_catalog."input_id"
+        type: string
+    input_name:
+        field_type: dimension
+        name: "Input Name"
+        source: input_catalog."input_name"
+        type: string
+    input_value:
+        field_type: measure
+        name: "Input Value"
+        source: input_catalog."input_value"
+        type: numeric

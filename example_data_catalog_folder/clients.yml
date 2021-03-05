@@ -1,0 +1,14 @@
+dataframe_order: 2
+label: Clients
+source: source(people)
+fields:
+  id:
+    field_type: dimension
+    name: "User ID"
+    source: people."ID"
+    type: string
+  name:
+    field_type: dimension
+    name: "Name"
+    source: people."Name"
+    type: string

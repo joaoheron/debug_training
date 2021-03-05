@@ -1,0 +1,12 @@
+dataframe_order: 7
+label: Clients Input
+source: input
+fields:
+  id:
+    field_type: dimension
+    name: "User ID"
+    type: string
+  name:
+    field_type: dimension
+    name: "Name"
+    type: string

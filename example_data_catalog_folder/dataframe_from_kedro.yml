@@ -1,0 +1,16 @@
+dataframe_order: 5
+label: Simple function generated
+source: function
+function:
+  file: src/dist/example_kedro-0.1-py3.6.egg
+  project_folder: example_kedro
+  project_name: example_kedro
+fields:
+  id:
+    field_type: dimension
+    name: id
+    type: string
+  name:
+    field_type: dimension
+    name: name
+    type: string

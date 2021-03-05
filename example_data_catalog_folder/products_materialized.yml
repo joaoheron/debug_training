@@ -1,0 +1,50 @@
+dataframe_order: 3
+materialized: true
+label: Products materialized
+source: source(products)
+fields:
+  product_id:
+    field_type: dimension
+    name: "ID"
+    source: products."ID"
+    type: string
+  category:
+    field_type: dimension
+    name: "Category"
+    source: products."Category"
+    type: string
+  created_at:
+    field_type: dimension
+    name: "Created At"
+    source: products."Created At"
+    type: string
+  ean:
+    field_type: dimension
+    name: "Ean"
+    source: products."Ean"
+    type: string
+  price:
+    field_type: dimension
+    name: "Price"
+    source: products."Price"
+    type: numeric
+  rating:
+    field_type: dimension
+    name: "Rating"
+    source: products."Rating"
+    type: numeric
+  rating_times_param:
+    field_type: measure
+    name: Rating * my_parameter
+    definition: rating::numeric * {my_parameter} 
+    type: numeric
+  title:
+    field_type: dimension
+    name: "Title"
+    source: products."Title"
+    type: string
+  vendor:
+    field_type: dimension
+    name: "Vendor"
+    source: products."Vendor"
+    type: string

@@ -1,0 +1,23 @@
+dataframe_order: 3
+materialized: true
+label: Orders per Client materialized
+source: ref(orders)
+join:
+  clients:
+    type: left_outer
+    table: ref(clients)
+    join_on:
+      - left: "user_id"
+        right: "order_id"
+group_by: name # por enquanto o group by precisa ser num campo do proprio df
+fields:
+  name:
+    field_type: dimension
+    name: "name"
+    source: ref(clients)."name"
+    type: string
+  sum_total:
+    field_type: measure
+    name: "total"
+    type: string  # aqui tava definition e source, eles tem que ser mutualmente exclusivos
+    definition: 'SUM( ref(orders)."total"::numeric )'

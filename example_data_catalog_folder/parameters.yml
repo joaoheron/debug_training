@@ -1,0 +1,8 @@
+my_parameter:
+  parameter_type: real
+  default: 2
+  description: my_parameter
+some_constant:
+  parameter_type: real
+  default: 4
+  description: some constant to test columns with more than one parameter

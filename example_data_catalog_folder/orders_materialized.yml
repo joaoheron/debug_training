@@ -1,0 +1,109 @@
+dataframe_order: 1
+materialized: true
+label: Orders materialized
+source: source(orders)
+join:
+  products:
+    type: left_outer
+    table: source(products)
+    join_on:
+      - left: "Product ID"
+        right: "ID"
+  clients:
+    type: left_outer
+    table: source(people)
+    join_on:
+      - left: "User ID"
+        right: "ID"
+fields:
+  order_id:
+    field_type: dimension
+    name: "Order ID"
+    source: orders."ID"
+    type: string
+  product_id:
+    field_type: dimension
+    name: "Product ID"
+    source: products."ID"
+    type: string
+  user_id:
+    field_type: dimension
+    name: "User ID"
+    source: people."ID"
+    type: string
+  category:
+    field_type: dimension
+    name: Category
+    source: products."Category"
+    type: string
+  name:
+    field_type: dimension
+    name: "Name"
+    source: people."Name"
+    type: string
+  subtotal:
+    field_type: dimension
+    name: Subtotal
+    source: orders."Subtotal"
+    type: numeric
+  tax:
+    field_type: dimension
+    name: Tax
+    source: orders."Tax"
+    type: numeric
+  discount:
+    field_type: dimension
+    name: Discount
+    source: orders."Discount"
+    type: numeric
+  total:
+    field_type: measure
+    name: Total Sales
+    source: orders."Total"::numeric
+    type: numeric       
+  total_multi:
+    field_type: measure
+    name: Total Sales Multiplied
+    definition: total::numeric * {my_parameter} 
+    type: numeric
+  quantity:
+    field_type: measure
+    name: Quantity sold
+    source: orders."Quantity"
+    type: numeric
+  quantity_100:
+    field_type: sql_formula
+    name: Qty times 100
+    definition: quantity * 100 # essas colunas precisam existir na source pra criar as views
+    type: numeric
+  quantity_10000:
+    field_type: sql_formula
+    name: Qty times 10000
+    definition: quantity * 100000
+    type: numeric
+  quantity_times_my_input:
+    field_type: sql_formula
+    name: Qty times my input
+    definition: quantity * {my_parameter} # as colunas que forem parametrizadas preicsam existir na definicao do dataframe
+    type: numeric
+  quantity_applied_function:
+    field_type: python_function
+    name: Qty applied function
+    function:
+      file: column_plus_3.py
+      entrypoint: init
+    type: string
+  classify_client:
+    field_type: python_function
+    name: Qty applied function
+    function:
+      file: client_classifer.py
+      entrypoint: my_entrypoint_function
+    type: string
+  api_call:
+    field_type: python_function
+    name: Qty applied function
+    function:
+      file: api_call.py
+      entrypoint: enriched_api
+    type: string

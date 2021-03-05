@@ -1,0 +1,19 @@
+dataframe_order: 9
+label: Orders Quantity
+source: ref(orders)
+fields:
+  order_id:
+    field_type: dimension
+    name: "Orders ID"
+    source: ref(orders).order_id
+    type: string
+  quantity:
+    field_type: measure
+    name: Quantity sold
+    source: ref(orders).quantity
+    type: numeric
+  quantity_times_my_input:
+    field_type: sql_formula
+    name: Qty times my input
+    definition: quantity * {my_parameter}
+    type: numeric

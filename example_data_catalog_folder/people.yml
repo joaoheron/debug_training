@@ -1,0 +1,69 @@
+dataframe_order: 2
+label: People
+source: source(people)
+fields:
+  user_id:
+    field_type: dimension
+    name: "ID"
+    source: people."ID"
+    type: string
+  name:
+    field_type: dimension
+    name: "Name"
+    source: people."Name"
+    type: string
+  address:
+    field_type: dimension
+    name: "Address"
+    source: people."Address"
+    type: string
+  birth_date:
+    field_type: dimension
+    name: "Birth Date"
+    source: people."Birth Date"
+    type: string
+  city:
+    field_type: dimension
+    name: "City"
+    source: people."City"
+    type: string
+  created_at:
+    field_type: dimension
+    name: "Created At"
+    source: people."Created At"
+    type: string
+  email:
+    field_type: dimension
+    name: "Email"
+    source: people."Email"
+    type: string
+  latitude:
+    field_type: dimension
+    name: "Latitude"
+    source: people."Latitude"
+    type: string
+  longitude:
+    field_type: dimension
+    name: "Longitude"
+    source: people."Longitude"
+    type: string
+  password:
+    field_type: dimension
+    name: "Password"
+    source: people."Password"
+    type: string
+  source:
+    field_type: dimension
+    name: "Source"
+    source: people."Source"
+    type: string
+  state:
+    field_type: dimension
+    name: "State"
+    source: people."State"
+    type: string
+  zip:
+    field_type: dimension
+    name: "Zip"
+    source: people."Zip"
+    type: string

@@ -1,0 +1,24 @@
+dataframe_order: 6
+label: Simple function generated
+# I dont think we need to pass source here
+source: function
+# Function Definition
+function:
+  # path to kedro egg
+  file: src/dist/example_kedro-0.1-py3.6.egg
+  # Folder on project root
+  project_folder: example_kedro
+  # Porject_name, you can find it inside src
+  project_name: example_kedro
+  # Here we can define which pipeline to run
+  pipeline: ds
+# Here we pass all fields result from function, source here is weird
+fields:
+  id:
+    field_type: dimension
+    name: id
+    type: string
+  name:
+    field_type: dimension
+    name: name
+    type: string

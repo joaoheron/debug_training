@@ -1,0 +1,19 @@
+dataframe_order: 4
+label: Profit per Client
+source: ref(orders_per_client)
+fields:
+  name:
+    field_type: dimension
+    name: "Name"
+    source: ref(orders_per_client)."name"
+    type: string
+  sum_total:
+    field_type: measure
+    name: "Total"
+    source: ref(orders_per_client)."sum_total"
+    type: numeric
+  profit:
+    field_type: measure
+    name: "Qty times my sum"
+    definition: 'ref(orders_per_client)."sum_total"' # isso aqui ta estranho: ref(orders_per_client)
+    type: numeric
