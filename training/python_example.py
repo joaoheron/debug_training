@@ -1,16 +1,22 @@
 import os
 #### Imports syntax ###
-import datetime
+# import datetime
 # from datetime import timedelta
-# from datetime import timedelta as indicium
+from datetime import timedelta as indicium
+
+# days = indicium(days=2)
+# print(str(days))
 
 #### Import installed lib ####
 from dataml_engine.engine.postgresql import PostrgesqlEngine
 
 #### Import local packages ####
-#### ABSOLUTE & RELATIVE IMPORTS EXAMPLES ####
+#### ABSOLUTE & RELATIVE IMPORTS EXAMPLES #### 
+# show diferences on files located on another folder, and moving file
 # from training.example_folder.another_python_example import arg_1
 # from example_folder.another_python_example import arg_1
+# from example_folder import simple_file
+# from training.example_folder import simple_file
 
 #### SCRIPT EXECUTION EXAMPLES ####
 # from example_folder.another_python_example import arg_1 # Ok
