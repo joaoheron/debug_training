@@ -1,17 +1,24 @@
+#### Imports syntax ###
+
 import os
-# import os as indicium
 # from os import environ
+# import os as indicium
+
+#### Import installed lib ####
+
+from dataml_engine.engine.postgresql import PostrgesqlEngine
+
+#### Import local files ####
 
 # from another_python_example import arr_1
 from training.example_folder.another_python_example import arr_1
-
-# from training.models import elemento
-import training.models.elemento
+from training.models import elemento
+# import training.models.elemento
 # from ..models import Element, elemento
 from training import models
 
-DB_URI_DEV = os.environ.get('DB_URI_DEV')
-print("env var DB_URI_DEV is " + str(DB_URI_DEV))
+DB_URI = os.environ.get('DB_URI')
+print("DB_URI is " + str(DB_URI))
 
 print(__package__)
 
@@ -23,5 +30,7 @@ for i in range(5):
 a = 1 + 32
 b = a + 2
 c = a + b
+
+postgres_engine = PostrgesqlEngine('app.yaml', 'example_data_catalog_folder')
 
 print(str(c))

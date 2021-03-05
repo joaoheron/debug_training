@@ -1,0 +1,3 @@
+app:
+ app_name: dataml
+ source_schema: public

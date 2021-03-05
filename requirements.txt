@@ -2,3 +2,5 @@ kedro
 dbt
 pandas
 flake8
+git+https://github.com/Stewori/pytypes.git
+git+ssh://git@bitbucket.org/indiciumtech/data_ml.git@1.0.2
