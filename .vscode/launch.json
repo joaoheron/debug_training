@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
         {
             "name": "Python: Current File",
             "type": "python",
@@ -12,7 +11,7 @@
             "env": {
                 "DB_URI": "Defined by launch.json env"
             },
-            "program": "training/example_folder/python_example.py",
+            "program": "training/python_example.py",
             "console": "integratedTerminal"
         },
         {
@@ -21,7 +20,7 @@
             "request": "launch",
             "envFile": "${workspaceFolder}/example.env",
             "justMyCode": false,
-            "module": "training.example_folder.python_example"
+            "module": "training.python_example"
         }
     ]
 }
