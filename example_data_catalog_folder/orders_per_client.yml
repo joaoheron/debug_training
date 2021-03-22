@@ -8,7 +8,7 @@ join:
     join_on:
       - left: "user_id"
         right: "order_id"
-group_by: name # por enquanto o group by precisa ser num campo do proprio df
+group_by: name
 fields:
   name:
     field_type: dimension
@@ -18,5 +18,5 @@ fields:
   sum_total:
     field_type: measure
     name: "total"
-    type: string  # aqui tava definition e source, eles tem que ser mutualmente exclusivos
+    type: string 
     definition: 'SUM( ref(orders)."total"::numeric )'

@@ -74,7 +74,7 @@ fields:
   quantity_100:
     field_type: sql_formula
     name: Qty times 100
-    definition: quantity * 100 # essas colunas precisam existir na source pra criar as views
+    definition: quantity * 100
     type: numeric
   quantity_10000:
     field_type: sql_formula
@@ -84,7 +84,7 @@ fields:
   quantity_times_my_input:
     field_type: sql_formula
     name: Qty times my input
-    definition: quantity * {my_parameter} # as colunas que forem parametrizadas preicsam existir na definicao do dataframe
+    definition: quantity * {my_parameter}
     type: numeric
   quantity_applied_function:
     field_type: python_function
